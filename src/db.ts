@@ -19,3 +19,4 @@ export default async function sql<T = QueryResult>(
   const [res] = await pool.execute(query, values);
   return res as T;
 }
+//temos redos
