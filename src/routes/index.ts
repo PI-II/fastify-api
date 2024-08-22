@@ -6,7 +6,7 @@ import musica from "../assets/musica.jpg";
 
 export default async function (fastify: FastifyInstance) {
   fastify.get("/", async (_, reply) => {
-    return reply.send("Swinging in his cell");
+    return reply.send("Ciao Mondo!");
   });
 
   fastify.post(
