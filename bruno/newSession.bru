@@ -1,0 +1,19 @@
+meta {
+  name: newSession
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/session
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id_usuario": 1,
+    "inicio": "2024-05-04T08:46:26",
+    "fim": "2024-08-22T05:15:06"
+  }
+}

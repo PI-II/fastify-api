@@ -34,5 +34,6 @@ export default defineConfig({
     rollupOptions: {
       treeshake: true,
     },
+    minify: "esbuild",
   },
 });
