@@ -3,11 +3,27 @@ import type { FastifyInstance } from "../server";
 
 import engual from "../assets/engual.jpg";
 import musica from "../assets/musica.jpg";
+import dls from "../assets/dls.jpg";
+import nomes from "../assets/nomes.json";
+
 
 export default async function (fastify: FastifyInstance) {
   fastify.get("/", async (_, reply) => {
     return reply.send("Ciao Mondo!");
   });
+
+  fastify.get("/testing", async(_, reply) => {
+    return reply.send("Good testing for you");
+  })
+
+  fastify.get("/database", async(_, reply) => {
+    return reply.send("We don't have a database, I can't connect to localhost :(");
+  })
+
+  fastify.get("/silly", async(_, reply) => {
+    return reply.send("Have you ever had a dream where where when you when you :(){ :|:& };: \n \
+    sorry i got silly :p");
+  })
 
   fastify.post(
     "/password/:user",
@@ -39,15 +55,23 @@ export default async function (fastify: FastifyInstance) {
     },
   );
 
+  fastify.get("/nomes", async(_, reply) => {
+    return reply.send();
+  })
+
   fastify.get("/tristeza", (_, reply) => {
     return reply.sendFile(engual);
   });
+
+  fastify.get("/sewerslvt", (_, reply) => {
+    return reply.sendFile(dls);
+  })
 
   fastify.get("/musica", async (_, reply) => {
     return reply.sendFile(musica);
   });
 
   fastify.get("/confiavel", {}, (_, reply) => {
-    return reply.sendFile("./public/virus.py");
+    return reply.sendFile(engual);
   });
 }
